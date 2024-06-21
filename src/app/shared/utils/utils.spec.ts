@@ -13,11 +13,11 @@ describe('utils', () => {
   describe('pluck', () => {
     it('returns correct result', () => {
       const data = [
-        { id: '01', name: 'foo' },
-        { id: '02', name: 'bar' },
-        { id: '03', name: 'baz' },
+        { id: '007', name: 'bond' },
+        { id: '008', name: 'bill' },
+        { id: '006', name: 'rmc' },
       ];
-      expect(pluck(data, 'id')).toEqual(['01', '02', '03']);
+      expect(pluck(data, 'id')).toEqual(['007', '008', '006']);
     });
   });
 });

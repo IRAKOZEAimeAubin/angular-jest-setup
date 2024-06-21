@@ -34,13 +34,13 @@ describe('UsersService', () => {
     it('should add a user', () => {
       const user: UserInterface = {
         id: '007',
-        name: 'fooBar',
+        name: 'bond',
       };
       usersService.addUser(user);
       expect(usersService.users).toEqual([
         {
           id: '007',
-          name: 'fooBar',
+          name: 'bond',
         },
       ]);
     });
@@ -50,13 +50,13 @@ describe('UsersService', () => {
     it('should add a user', () => {
       const user: UserInterface = {
         id: '007',
-        name: 'fooBar',
+        name: 'bond',
       };
       usersService.addUserToo(user);
       expect(usersService.users$.getValue()).toEqual([
         {
           id: '007',
-          name: 'fooBar',
+          name: 'bond',
         },
       ]);
     });
@@ -67,7 +67,7 @@ describe('UsersService', () => {
       usersService.users$.next([
         {
           id: '007',
-          name: 'baz',
+          name: 'bond',
         },
       ]);
       usersService.removeUserToo('007');
@@ -80,7 +80,7 @@ describe('UsersService', () => {
       usersService.users = [
         {
           id: '007',
-          name: 'baz',
+          name: 'bond',
         },
       ];
       usersService.removeUser('007');
@@ -94,7 +94,7 @@ describe('UsersService', () => {
       usersService.users = [
         {
           id: '007',
-          name: 'baz',
+          name: 'bond',
         },
       ];
       usersService.getUserNames();
@@ -102,8 +102,8 @@ describe('UsersService', () => {
         usersService.users,
         'name'
       );
-      // utilsServiceMock.pluck.mockReturnValue(['foo']);
-      // expect(usersService.getUserNames()).toEqual(['foo']);
+      // utilsServiceMock.pluck.mockReturnValue(['bond']);
+      // expect(usersService.getUserNames()).toEqual(['bond']);
     });
   });
 });

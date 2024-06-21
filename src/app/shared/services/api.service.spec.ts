@@ -10,6 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 describe('ApiService', () => {
   let apiService: ApiService;
   let httpTestingController: HttpTestingController;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -73,17 +74,17 @@ describe('ApiService', () => {
         },
       });
       const req = httpTestingController.expectOne('http://localhost:3004/tags');
-      req.flush('Server error', {
-        status: 422,
-        statusText: 'Unprocessible entity',
+      req.flush('Access reserved', {
+        status: 403,
+        statusText: 'Forbidden',
       });
 
       if (!actualError) {
         throw new Error('Error needs to be defined');
       }
 
-      expect(actualError.status).toEqual(422);
-      expect(actualError.statusText).toEqual('Unprocessible entity');
+      expect(actualError.status).toEqual(403);
+      expect(actualError.statusText).toEqual('Forbidden');
     });
   });
 });

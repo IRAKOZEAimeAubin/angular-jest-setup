@@ -7,5 +7,5 @@ describe('TitleCasePipe', () => {
     expect(pipe.transform('the dark knight rises')).toBe(
       'The Dark Knight Rises'
     );
-  });
+  } );
 });
